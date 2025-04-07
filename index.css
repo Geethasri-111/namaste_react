@@ -1,3 +1,40 @@
-#heading{
-    color:red;
+.header{
+    display:flex;
+    justify-content: space-between;
+    border-bottom:1px solid black;
+}
+.logo img{
+    width:100px;
+}
+.nav-items ul{
+    display:flex;
+
+}
+.nav-items li{
+    list-style-type:none;
+    padding:10px;
+    margin:10px;
+}
+.nav-items li a{
+   text-decoration: none;
+   font-size:20px;
+}
+.search{
+    padding:10px;
+}
+.restroCards{
+    padding:10px;
+    display: flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.restroCard{
+    background-color:#f9f9f9;
+    border:1px solid black;
+    padding:5px;
+    width:300px;
+}
+.res-logo img{
+    width:100%;
+    height:150px;
 }
