@@ -19,3 +19,15 @@ this  is a sample react project
 -Treeshaking-removes unused code
 -diffreent dev nd prod builds
 
+imports & exports
+
+Named export
+    if wehave more than one export in a file usenamed export 
+    export const variable
+    import {} from ...
+
+
+defaultexport
+    have only one export in a file
+    import variable from ...
+    export default variable
