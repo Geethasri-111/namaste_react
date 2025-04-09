@@ -15,7 +15,7 @@ const RestroCards = (props) =>{
             <p>{cuisines.join(',')}</p>
             <h4>{avgRating} stars</h4>
             <p>{costForTwo}</p>
-            <p>{resData.info.deliveryTime} mts</p>
+            <p>{resData.info.sla.deliveryTime} mts</p>
             </div>
             
         </div>
