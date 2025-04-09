@@ -19,8 +19,17 @@
    text-decoration: none;
    font-size:20px;
 }
-.search{
+.searchBar{
     padding:10px;
+}
+.filter{
+    display:flex;
+
+}
+.searchBar input,.searchBar button{
+    padding:10px;
+    background-color:#c2c2c2; 
+    border: 0;
 }
 .restroCards{
     padding:10px;
@@ -51,4 +60,14 @@
     height:300px;
     background-color: #f9f9f9;
     margin:10px;
+}
+.login-btn{
+    background-color: transparent;
+    color:blue;
+    cursor: pointer;
+    padding:10px;
+    border:0;
+}
+.login-btn:hover{
+    background-color: #f9f9f9;
 }
