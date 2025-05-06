@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestroCards from "../RestroCards/RestroCards";
 import Shimmer from "../Shimmer/Shimmer";
+import { Link } from "react-router";
 
 const Main =() =>{
     const [restaurantList,setRestaurantList] = useState([]);
@@ -43,8 +44,12 @@ return restaurantList.length === 0 ? <Shimmer/> :(
             }>TopRated</button>
             </div>
         </div>
-        <div className='restroCards'>{              
-            filteredRestro.map(resItem => <RestroCards key={resItem.info.id} resData={resItem}/> )
+        <div className='restroCards'>
+            {filteredRestro.map(resItem =>(
+            <Link  key={resItem.info.id} to={'/city/'+resItem.info.areaName+'/'+resItem.info.id}>
+                <RestroCards resData={resItem}/>
+            </Link>)
+            )
         }
         </div>
     </div>
