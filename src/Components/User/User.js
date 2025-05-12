@@ -18,6 +18,13 @@ class User extends React.Component{
             userData :json
         })
     }
+    componentDidUpdate(){
+        console.log('component didupdate');
+
+    }
+    componentWillUnmount(){
+        console.log('component unmount')
+    }
     render(){
         const {name,location,avatar_url} = this.state.userData;
         console.log(this.props.name+'render')
