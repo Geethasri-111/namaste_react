@@ -13,7 +13,9 @@ const Header = () => {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/About">About Us</Link></li>
+
                     <li><Link to="/contact">Contact Us</Link></li>
+                    <li><Link to="/Grocery">Grocery</Link></li>
                     <li>Cart</li>
                     <button className="login-btn" onClick={()=>btnAuth === 'Login'?setBtnAuth('Logout'):  setBtnAuth('Login')}>{btnAuth}</button>
                 </ul>

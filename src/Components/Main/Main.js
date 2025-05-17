@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestroCards from "../RestroCards/RestroCards";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router";
+import useStatus from "../Utils/useStatus";
 
 const Main =() =>{
     const [restaurantList,setRestaurantList] = useState([]);
@@ -20,8 +21,9 @@ const Main =() =>{
             setfilteredRestro(fetchedData?.data?.cards[1]?.card?.card?.gridElements.infoWithStyle.restaurants);
     }
     //conditional renderingwith ternary
-        
-return restaurantList.length === 0 ? <Shimmer/> :(
+        const  onlineStatusVal = useStatus();
+return onlineStatusVal === false ? 'plz check internet connection' :
+restaurantList.length === 0 ? <Shimmer/> :(
     
     <div className='restaurantCard container'>
         <div className="filter">

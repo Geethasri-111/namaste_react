@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Suspense, lazy} from 'react';
 import ReactDOM  from 'react-dom/client';
 import Header from './Components/Header/Header';
 import { BrowserRouter,Outlet,Route,Routes } from 'react-router';
@@ -6,9 +6,10 @@ import About from './Components/About/About';
 import Main from './Components/Main/Main';
 import ContactUs from './Components/ContactUs/ContactUs';
 import RestaurentMenu from './Components/RestaurentMenu/RestaurentMenu';
+import Shimmer from './Components/Shimmer/Shimmer';
 
 
-
+const Grocery = lazy(() => import('./Components/Grocery/Grocery.js'))
 const App = () => {
     return (
         <div className="App">
@@ -25,6 +26,7 @@ root.render( <BrowserRouter>
         <Route path="/" element={<App/>}>
             <Route index element={<Main/>}/>
             <Route path="/About" element={<About/>} />
+            <Route path="/Grocery" element={<Suspense fallback={<Shimmer/>}><Grocery/></Suspense>} />
             <Route path="/contact" element={<ContactUs/>}/>
             <Route path="/city/:cityName/:resId" element={<RestaurentMenu/>}/>
         </Route>
