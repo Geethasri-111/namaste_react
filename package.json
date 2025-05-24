@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "serve": "live-server dist"
   },
   "repository": {
     "type": "git",
@@ -20,18 +21,18 @@
   "author": "geetha",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.14.2"
+    "autoprefixer": "^10.4.21",
+    "parcel": "^2.14.2",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
-    "@parcel/transformer-postcss": "^2.15.1",
     "@tailwindcss/postcss": "^4.1.7",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
+    "bootstrap": "^5.3.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.5.1",
-    "react-router-dom": "^7.5.3",
-    "tailwindcss": "^4.1.7"
+    "react-router-dom": "^7.5.3"
   },
   "browserslist": [
     "last 10  version"
