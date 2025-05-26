@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import RestroCards,{ withOpen } from "../RestroCards/RestroCards";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router";
 import useStatus from "../Utils/useStatus";
+import { Input } from "postcss";
+import UserContext from "../Utils/UserContext";
 
 const Main =() =>{
     const [restaurantList,setRestaurantList] = useState([]);
     const [filteredRestro,setfilteredRestro] = useState([]);
     const [searchText,setSearchText] = useState('');
     const RestaurentOpen =  withOpen(RestroCards);
+    const {loggedUser,setUserName} = useContext(UserContext)
     useEffect(()=>{
         fetchRestaurantData();
     },[])
@@ -33,13 +36,13 @@ restaurantList.length === 0 ? <Shimmer/> :(
             <div className='searchBar m-2 p-2'>
                 <input type="text" className="searchInput border border-solid border-black" 
                 value={searchText}
-                onChange={(e)=>{setSearchText(e.target.value)}}/>
+                onChange={(e)=>setSearchText(e.target.value)}/>
                 <button className=" border-solid px-4 py-1 bg-gray-100 m-4" onClick={()=>{
                     const searchfilter = restaurantList.filter(restro => restro.info.name.toLowerCase().includes(searchText));
                     setfilteredRestro(searchfilter);
                 }}>Search</button>
             </div>
-            <div className="filterSection">
+            <div className="filterSection flex space-between">
                 <button className="filter-btn border-solid px-4 py-1 bg-gray-100 m-4"
                 onClick={() => {
                     const filteredrestaurantList = restaurantList.filter(item => item.info.avgRating>4.5);
@@ -47,6 +50,7 @@ restaurantList.length === 0 ? <Shimmer/> :(
 
                 }
             }>TopRated</button>
+            <div>Name:</div><input type="text" value={loggedUser} onChange={(e) => setUserName(e.target.value)}></input>
             </div>
         </div>
         <div className='restroCards flex flex-wrap'>
