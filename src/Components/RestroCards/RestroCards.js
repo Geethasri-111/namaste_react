@@ -11,7 +11,7 @@ const RestroCards = (props) =>{
                 <img src={cdn_url+cloudinaryImageId} alt="food"/>
             </div>
             <div className='card-details'>
-            <h2 className="restroTitle">{name}</h2>
+            <h2 className="restroTitle font-bold">{name}</h2>
             <p>{cuisines.join(', ')}</p>
             <h4>{avgRating} stars</h4>
             <p>{costForTwo}</p>

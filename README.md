@@ -19,7 +19,7 @@ this  is a sample react project
 -Treeshaking-removes unused code
 -diffreent dev nd prod builds
 
-imports & exports
+#imports & exports
 
 Named export
     if wehave more than one export in a file usenamed export 
@@ -31,3 +31,16 @@ defaultexport
     have only one export in a file
     import variable from ...
     export default variable
+
+
+    #redux toolkit
+
+    -install @reduxjs/toolkit && react-redux
+    -Buildour store
+    -connect our store to the app
+    - create a slice(cart)
+    - dispatch an action 
+    -Read the data using selector
+
+
+s

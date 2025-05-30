@@ -8,6 +8,8 @@ import ContactUs from './Components/ContactUs/ContactUs';
 import RestaurentMenu from './Components/RestaurentMenu/RestaurentMenu';
 import Shimmer from './Components/Shimmer/Shimmer';
 import UserContext from './Components/Utils/UserContext';
+import { Provider } from 'react-redux';
+import appStore from './Components/Utils/store/appStore';
 
 
 const Grocery = lazy(() => import('./Components/Grocery/Grocery.js'))
@@ -21,6 +23,7 @@ const App = () => {
         setUserName(data.name);
     },[])
     return (
+        <Provider store={appStore}>
         <UserContext.Provider value={{loggedUser:userName,setUserName}}>
              <div className="App">
                     <Header/>
@@ -28,7 +31,7 @@ const App = () => {
                     
                 </div>
         </UserContext.Provider>
-       
+        </Provider>
     )
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));

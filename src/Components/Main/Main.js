@@ -25,7 +25,6 @@ const Main =() =>{
             setfilteredRestro(fetchedData?.data?.cards[1]?.card?.card?.gridElements.infoWithStyle.restaurants);
     }
 
-    console.log(restaurantList);
     //conditional renderingwith ternary
         const  onlineStatusVal = useStatus();
 return onlineStatusVal === false ? 'plz check internet connection' :
