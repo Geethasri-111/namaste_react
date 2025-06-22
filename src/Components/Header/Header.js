@@ -11,8 +11,8 @@ const Header = () => {
     const {loggedUser}= useContext(UserContext);
     const online = useStatus();
 //subscribing to storeusingselector
-    const countOfItems = useSelector();
-
+    const countOfItems = useSelector(store => store.cart.items);
+    console.log(countOfItems)
 
     return (
         <div className='header flex justify-between mb-2 border-b border-gray-950/5 dark:border-white/10'>
@@ -27,7 +27,7 @@ const Header = () => {
 
                     <li className="px-4"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-4"><Link to="/Grocery">Grocery</Link></li>
-                    <li className="px-4">Cart(0 items)</li>
+                    <li className="px-4"><Link to="/cart">Cart({countOfItems.length} items)</Link></li>
                     <li className="font-bold px-4">{loggedUser}</li>
                     <button className="login-btn" onClick={()=>btnAuth === 'Login'?setBtnAuth('Logout'):  setBtnAuth('Login')}>{btnAuth}</button>
                 </ul>

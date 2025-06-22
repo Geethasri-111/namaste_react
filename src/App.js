@@ -10,6 +10,7 @@ import Shimmer from './Components/Shimmer/Shimmer';
 import UserContext from './Components/Utils/UserContext';
 import { Provider } from 'react-redux';
 import appStore from './Components/Utils/store/appStore';
+import Cart from './Components/Cart/Cart';
 
 
 const Grocery = lazy(() => import('./Components/Grocery/Grocery.js'))
@@ -44,6 +45,7 @@ root.render( <BrowserRouter>
             <Route path="/Grocery" element={<Suspense fallback={<Shimmer/>}><Grocery/></Suspense>} />
             <Route path="/contact" element={<ContactUs/>}/>
             <Route path="/city/:cityName/:resId" element={<RestaurentMenu/>}/>
+            <Route path="/cart" element={<Cart/>}/>
         </Route>
     </Routes>
     </BrowserRouter>);
