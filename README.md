@@ -36,7 +36,7 @@ defaultexport
     #redux toolkit
 
     -install @reduxjs/toolkit && react-redux
-    -Buildour store
+    -Build our store
     -connect our store to the app
     - create a slice(cart)
     - dispatch an action 
@@ -46,5 +46,13 @@ defaultexport
 #settinguptesting
 
 -react testing libraray
-- jest
+- jest -npm install --save-dev jest
 -install babel dependency and create babel config
+
+-configure parcelrc file to disable babel trasformation
+
+--jest configuration - 
+configure jest config npm init jest@latest
+ jsdomwith babel
+
+ -install -jsdom library
