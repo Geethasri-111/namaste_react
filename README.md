@@ -43,4 +43,8 @@ defaultexport
     -Read the data using selector
 
 
-s
+#settinguptesting
+
+-react testing libraray
+- jest
+-install babel dependency and create babel config
